@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from 'react';
-
-const data = ['foo', 'bar']
+import React, { useState } from "react";
+import Button from "@material-ui/core/Button";
 
 const MyHook = () => {
-  const [count, setCount] = useState(0)
-  const [messages, setMessages] = useState([])
+  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    doSomething();
-  })
-
-  const doSomething = () => {
-    setMessages(data)
-  }
-  
   return (
     <div>
       <p>You clicked {count} times</p>
-      {
-          data.map(d => <span>{d + ' '}</span>)
-      }
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+
+      <Button onClick={() => setCount(count + 1)}>Tap</Button>
     </div>
   );
-}
+};
 
 export default MyHook;
